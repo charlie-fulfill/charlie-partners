@@ -1,122 +1,123 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "maple",
+  "name": "Charlie Partners",
+  "description": "Everything you need to position, sell, and deploy Charlie with your clients.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0E5747",
+    "light": "#F4F1E9",
+    "dark": "#000000"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Guides",
+        "anchor": "Introduction",
+        "icon": "hand-wave",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Introduction",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "introduction/welcome",
+              "introduction/what-is-charlie"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "anchor": "The Opportunity",
+        "icon": "lightbulb",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "The opportunity",
             "pages": [
-              "api-reference/introduction"
+              "opportunity/unified-commerce-gap",
+              "opportunity/who-charlie-is-built-for"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "anchor": "Working Together",
+        "icon": "handshake",
+        "groups": [
           {
-            "group": "Endpoint examples",
+            "group": "Working together",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "working-together/how-we-work-with-partners",
+              "working-together/commercial-model"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Sales Enablement",
+        "icon": "bullseye",
+        "groups": [
+          {
+            "group": "Sales enablement",
+            "pages": [
+              "sales-enablement/when-to-bring-charlie-in",
+              "sales-enablement/discovery-questions",
+              "sales-enablement/battle-card"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Technical",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Technical",
+            "pages": [
+              "technical/product-overview",
+              "technical/integrations"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Resources",
+        "icon": "folder-open",
+        "groups": [
+          {
+            "group": "Resources",
+            "pages": [
+              "resources/brand-and-assets",
+              "resources/about-charlie",
+              "resources/contact-and-next-steps"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Product docs",
+        "href": "https://docs.usecharlie.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Talk to us",
+      "href": "mailto:hello@usecharlie.ai"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/charliefulfill",
+      "linkedin": "https://linkedin.com/company/charliefulfill"
     }
   }
 }
