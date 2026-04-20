@@ -8,11 +8,6 @@
     "light": "#F4F1E9",
     "dark": "#000000"
   },
-  "favicon": "/favicon.svg",
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
   "appearance": {
     "default": "system",
     "strict": false
@@ -119,5 +114,6 @@
       "x": "https://x.com/charliefulfill",
       "linkedin": "https://linkedin.com/company/charliefulfill"
     }
-  }
+  },
+  "favicon": "/images/Logodarkcharlie.png"
 }
