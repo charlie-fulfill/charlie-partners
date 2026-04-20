@@ -115,5 +115,8 @@
       "linkedin": "https://linkedin.com/company/mintlify"
     }
   },
-  "logo": "/images/Logodarkcharlie.png"
+  "logo": "/images/Logodarkcharlie.png",
+  "fonts": {
+    "family": "Inter"
+  }
 }
