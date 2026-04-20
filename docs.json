@@ -75,7 +75,8 @@
             "group": "Technical",
             "pages": [
               "technical/product-overview",
-              "technical/integrations"
+              "technical/integrations",
+              "technical/custom-development"
             ]
           }
         ]
