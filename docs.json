@@ -117,6 +117,12 @@
   },
   "logo": "/images/Logodarkcharlie.png",
   "fonts": {
-    "family": "Inter"
+    "family": "Inter",
+    "heading": {
+      "family": "Geist"
+    },
+    "body": {
+      "family": "Inter"
+    }
   }
 }
