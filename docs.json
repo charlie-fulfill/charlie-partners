@@ -4,7 +4,7 @@
   "name": "Charlie Partners",
   "description": "Everything you need to position, sell, and deploy Charlie with your clients.",
   "colors": {
-    "primary": "#0E5747",
+    "primary": "#000000",
     "light": "#F4F1E9",
     "dark": "#000000"
   },
@@ -120,8 +120,8 @@
     "dark": "/images/Logodarkcharlie.png"
   },
   "logo": {
-    "light": "/images/logolight.svg",
-    "dark": "/images/logodark.svg",
+    "light": "/images/logodark.svg",
+    "dark": "/images/logolight.svg",
     "href": "https://usecharlie.ai"
   },
   "fonts": {
