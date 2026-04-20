@@ -126,7 +126,11 @@
     "href": "https://usecharlie.ai"
   },
   "fonts": {
-    "family": "Inter"
+    "family": "Inter",
+    "weight": 100,
+    "heading": {
+      "family": "Roboto"
+    }
   },
   "integrations": {
     "intercom": {
