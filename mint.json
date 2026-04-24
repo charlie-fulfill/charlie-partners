@@ -1,0 +1,139 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "aspen",
+  "name": "Charlie Partners",
+  "description": "Everything you need to position, sell, and deploy Charlie with your clients.",
+  "colors": {
+    "primary": "#0a66ff",
+    "light": "#f4f5f8",
+    "dark": "#0a0f1a"
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
+  },
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Introduction",
+        "icon": "hand-wave",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "introduction/welcome",
+              "introduction/what-is-charlie"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "The Opportunity",
+        "icon": "lightbulb",
+        "groups": [
+          {
+            "group": "The opportunity",
+            "pages": [
+              "opportunity/unified-commerce-gap",
+              "opportunity/who-charlie-is-built-for"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Working Together",
+        "icon": "handshake",
+        "groups": [
+          {
+            "group": "Working together",
+            "pages": [
+              "working-together/how-we-work-with-partners",
+              "working-together/commercial-model"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Sales Enablement",
+        "icon": "bullseye",
+        "groups": [
+          {
+            "group": "Sales enablement",
+            "pages": [
+              "sales-enablement/when-to-bring-charlie-in",
+              "sales-enablement/discovery-questions",
+              "sales-enablement/battle-card"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Technical",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Technical",
+            "pages": [
+              "technical/product-overview",
+              "technical/integrations",
+              "technical/custom-development"
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "Resources",
+        "icon": "folder-open",
+        "groups": [
+          {
+            "group": "Resources",
+            "pages": [
+              "resources/brand-and-assets",
+              "resources/about-charlie",
+              "resources/contact-and-next-steps"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Product docs",
+        "href": "https://docs.usecharlie.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Talk to us",
+      "href": "mailto:hello@usecharlie.ai"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/charliefulfill",
+      "linkedin": "https://linkedin.com/company/charliefulfill"
+    }
+  },
+  "favicon": {
+    "light": "/images/Logodarkcharlie.png",
+    "dark": "/images/Logodarkcharlie.png"
+  },
+  "logo": {
+    "light": "/images/logodark.svg",
+    "dark": "/images/logolight.svg",
+    "href": "https://partners.usecharlie.ai"
+  },
+  "fonts": {
+    "family": "Inter Tight",
+    "heading": {
+      "family": "Inter Tight"
+    }
+  },
+  "integrations": {
+    "intercom": {
+      "appId": "dqbjhnfu"
+    }
+  }
+}
