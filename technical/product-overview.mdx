@@ -1,5 +1,5 @@
 ---
-title: "Product overview"
+title: "Product overview."
 description: "A technical digest of Charlie's capabilities — everything you need before a client conversation."
 ---
 
@@ -9,9 +9,9 @@ For the full documentation, visit [docs.usecharlie.ai](https://docs.usecharlie.a
 
 ---
 
-## How Charlie fits into Shopify
+## How Charlie fits into Shopify.
 
-Charlie runs as **Shopify Functions** — meaning all routing logic executes natively inside Shopify's infrastructure at checkout. There are no external API calls, no latency added, no middleware to maintain.
+Charlie runs as **Shopify Functions** — meaning all routing logic executes natively inside Shopify's infrastructure at checkout. No external API calls, no latency added, no middleware to maintain.
 
 Charlie augments Shopify, it doesn't replace it:
 
@@ -26,11 +26,11 @@ Zero IT burden. No ERP integration needed. Clean uninstall — all data stored i
 
 ---
 
-## Order routing
+## Order routing.
 
-Charlie offers two complementary layers of routing control.
+Charlie offers 2 complementary layers of routing control.
 
-### Fulfillment constraints — hard rules
+### Fulfillment constraints - hard rules.
 
 Constraints **block** specific locations from fulfilling specific orders. If no eligible location remains, checkout is blocked. Use for absolute business requirements.
 
@@ -38,7 +38,7 @@ Examples: fragile items can never ship from a small store, a specific brand must
 
 **Constraint types:** product rules, customer rules, cart rules, shipment limits.
 
-### Routing rules — soft rules
+### Routing rules - soft rules.
 
 Routing rules **rank** locations by preference without blocking any. If the top-ranked location is out of stock, Charlie falls back to the next. Use for optimization.
 
@@ -57,15 +57,15 @@ Rules can be combined and ordered. Charlie evaluates them sequentially — earli
 
 ---
 
-## Safety stock
+## Safety stock.
 
-Safety stock reserves a portion of inventory so it never reaches the sales channels. Sellable inventory = available inventory − safety stock.
+Safety stock reserves a portion of inventory so it never reaches the sales channels. Sellable inventory = available inventory - safety stock.
 
-**Two configuration modes:**
+**2 configuration modes:**
 - **Prefer other locations** — soft approach, overflows when no alternative exists
 - **Block orders** — hard block, location excluded when threshold is reached
 
-**Two configuration methods:**
+**2 configuration methods:**
 - **Rules-based** (recommended) — apply in bulk across products, collections, and location types. Fixed quantity or percentage.
 - **Variant-level** — set per product variant for granular exceptions
 
@@ -76,13 +76,13 @@ Safety stock reserves a portion of inventory so it never reaches the sales chann
 
 ---
 
-## Analytics
+## Analytics.
 
 Charlie's analytics dashboard tracks fulfillment network performance across all locations.
 
 **Overview metrics:** revenue, average fulfillment time, on-time rate.
 
-**Fulfillment flow:** routed → on hold → rerouted → fulfilled. Breaks down where bottlenecks occur.
+**Fulfillment flow:** routed > on hold > rerouted > fulfilled. Breaks down where bottlenecks occur.
 
 **Per-location table:** revenue, orders fulfilled, average time, on-time rate — comparable across all locations.
 
@@ -92,26 +92,26 @@ Charlie's analytics dashboard tracks fulfillment network performance across all 
 
 ---
 
-## Automations
+## Automations.
 
 Charlie provides pre-built **Shopify Flow** templates. No third-party tools, no custom code.
 
-Current template: schedule location capacity by day of week — set different order limits per day automatically (e.g., 100 orders Mon–Thu, 50 on Saturday, 0 on Sunday).
+Current template: schedule location capacity by day of week — set different order limits per day automatically (e.g., 100 orders Mon-Thu, 50 on Saturday, 0 on Sunday).
 
 Custom automations can be built from scratch using Charlie's Flow action: **Set location capacity**.
 
 ---
 
-## Activity logs
+## Activity logs.
 
 Full audit trail of all configuration changes — who changed what, when, and whether it was a team member or the system. Covers locations, safety stock rules, fulfillment constraints, shipment limits, and app settings. Searchable and filterable by action type, resource type, and date.
 
 ---
 
-## Locations
+## Locations.
 
 Charlie supports multiple location types (warehouse, store, etc.) with tags for use in routing rules. Each location can have a daily order capacity limit. Capacity feeds directly into routing decisions.
 
-<Card title="Next: Integrations" icon="arrow-right" href="/technical/integrations" horizontal>
+<Card title="Next: Integrations." icon="arrow-right" href="/technical/integrations" horizontal>
   Third-party tools and ERP compatibility.
 </Card>

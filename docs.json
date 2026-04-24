@@ -4,9 +4,9 @@
   "name": "Charlie Partners",
   "description": "Everything you need to position, sell, and deploy Charlie with your clients.",
   "colors": {
-    "primary": "#001f98",
-    "light": "#F4F1E9",
-    "dark": "#0D1117"
+    "primary": "#0a66ff",
+    "light": "#f4f5f8",
+    "dark": "#0a0f1a"
   },
   "appearance": {
     "default": "system",
@@ -126,9 +126,9 @@
     "href": "https://partners.usecharlie.ai"
   },
   "fonts": {
-    "family": "Inter",
+    "family": "Inter Tight",
     "heading": {
-      "family": "Montserrat"
+      "family": "Inter Tight"
     }
   },
   "integrations": {
