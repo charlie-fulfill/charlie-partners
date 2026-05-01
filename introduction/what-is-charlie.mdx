@@ -33,27 +33,27 @@ Charlie is a **Shopify-native platform** for omnichannel retail brands. It does 
 
 <AccordionGroup>
   <Accordion title="Ship from store" icon="store">
-    Warehouse out of stock? Charlie routes to the most relevant store. Staff ships directly from Shopify POS — no second screen, no new app.
+    Shopify assigns fulfillment locations from a static priority list and it can't reroute when a store does not answer. Charlie evaluates live stock, proximity, and capacity on every order and assigns to the right location dynamically and automatically. Staff ships directly from Shopify POS. No second screen, no new app, no manual reassignment.
   </Accordion>
 
   <Accordion title="Click and collect" icon="bag-shopping">
-    Customers buy online, Charlie reserves sellable stock and manages the pickup queue in POS. No overselling.
+    Shopify doesn't let you control which products are eligible for BOPIS — it's all or nothing, with no rule per product or location. Charlie gives merchants granular control over pickup eligibility, and surfaces a prioritized pickup queue directly in POS so staff always know what to prepare next and how urgently.
   </Accordion>
 
   <Accordion title="Endless aisle" icon="arrows-left-right">
-    Product not in this store? Staff can order from another location for home delivery — without leaving POS.
+    Shopify can place the order in-store, but it has no logic to route it to the location that actually has the stock. Charlie detects which location holds the inventory and routes the order there for home delivery automatically, all without leaving POS. The merchant keeps the sale; the customer gets the product.
   </Accordion>
 
   <Accordion title="VIP routing" icon="star">
-    High-value or VIP-tagged orders route to a flagship automatically so teams can add a personal touch.
+    Shopify applies the same location priority to every order regardless of who's buying or how much they're spending. Charlie reads order value and customer tags at the moment of purchase and routes high-value or VIP orders to a flagship automatically — so the right team can add a personal touch without any manual triage.
   </Accordion>
 
   <Accordion title="Capacity management" icon="gauge">
-    A store hits its daily limit? Charlie stops routing there and redirects automatically. Zero manual intervention.
+    Shopify has no concept of a daily order limit or order backlog — a single store can be flooded with more orders than its team can handle. Charlie caps each location. When a store hits its limit, orders reroute automatically to the next best location. SLAs stay intact, teams stay sane.
   </Accordion>
 
   <Accordion title="Revenue attribution" icon="chart-bar">
-    Every fulfillment in-store is credited to that location. Retail teams see their number, in Charlie.
+    Shopify doesn't track which location fulfilled an order — there's no store-level P&L inside the platform. Charlie credits every fulfillment to the location that shipped it. Retail managers see their real contribution in a dedicated view, creating the right incentive to fulfill well.
   </Accordion>
 </AccordionGroup>
 
@@ -61,35 +61,15 @@ Charlie is a **Shopify-native platform** for omnichannel retail brands. It does 
 
 <Steps>
   <Step title="Install from the Shopify App Store">
-    One click. No ERP integration. No API mapping. No engineering. Done in under 2 minutes.
+    One click. No ERP integration. No engineering. Done in under 2 minutes.
   </Step>
   <Step title="Configure routing rules">
     No code needed. Rules are set inside the Charlie dashboard within Shopify admin.
   </Step>
   <Step title="Go live">
-    Average time to first order routed by Charlie: **1 day**.
+    Average time to first order routed by Charlie: **2 days**.
   </Step>
 </Steps>
-
-## The numbers.
-
-<CardGroup cols={4}>
-  <Card title="30+" icon="building-storefront">
-    Shopify Plus brands live today
-  </Card>
-
-  <Card title="1 day" icon="clock">
-    Average time to first routed order
-  </Card>
-
-  <Card title="$0" icon="circle-dollar-to-slot">
-    Setup and implementation cost
-  </Card>
-
-  <Card title="$350-$3k/mo" icon="tag">
-    Pricing based on monthly GMV
-  </Card>
-</CardGroup>
 
 ## What makes it different.
 
@@ -98,10 +78,12 @@ Charlie runs inside Shopify. Your clients' store teams use 1 screen — not 2. N
 |  | Charlie | Classic OMS |
 | --- | --- | --- |
 | Lives inside Shopify | ✓ | ✗ |
-| Time to go live | Days | 6-18 months |
-| Setup cost | \$0 | \$100k\+ |
+| Lives inside Shopify POS | ✓ | ✗ |
+| Time to go live | 2-4 weeks | 6-18 months |
+| Setup cost | None | \$100k\+ |
 | New tool for store teams | None | Yes |
 | Pricing | Fixed monthly | High CAPEX |
+| Variable cost per order | No | Yes |
 
 <Card title="Next: The opportunity." icon="arrow-right" horizontal href="/opportunity/unified-commerce-gap">
   Understand who needs Charlie and why now.
