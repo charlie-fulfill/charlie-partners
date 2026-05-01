@@ -91,9 +91,9 @@
             "group": "Resources",
             "pages": [
               "resources/about-charlie",
-              "resources/contact-and-next-steps",
               "resources/battle-card",
-              "resources/roi-calculator"
+              "resources/roi-calculator",
+              "resources/contact-and-next-steps"
             ]
           }
         ]
