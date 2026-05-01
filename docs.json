@@ -22,7 +22,8 @@
             "group": "Introduction",
             "pages": [
               "introduction/welcome",
-              "introduction/what-is-charlie"
+              "introduction/what-is-charlie",
+              "introduction/the-problem"
             ]
           }
         ]
@@ -62,7 +63,7 @@
             "pages": [
               "sales-enablement/when-to-bring-charlie-in",
               "sales-enablement/discovery-questions",
-              "sales-enablement/battle-card"
+              "sales-enablement/common-objections"
             ]
           }
         ]
@@ -88,9 +89,11 @@
           {
             "group": "Resources",
             "pages": [
-              "resources/brand-and-assets",
               "resources/about-charlie",
-              "resources/contact-and-next-steps"
+              "resources/brand-and-assets",
+              "introduction/roi-simulator",
+              "resources/contact-and-next-steps",
+              "resources/battle-card"
             ]
           }
         ]
