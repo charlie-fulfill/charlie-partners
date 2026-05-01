@@ -77,7 +77,8 @@
             "pages": [
               "technical/product-overview",
               "technical/integrations",
-              "technical/custom-development"
+              "technical/custom-development",
+              "technical/theme-integration"
             ]
           }
         ]
@@ -90,10 +91,9 @@
             "group": "Resources",
             "pages": [
               "resources/about-charlie",
-              "resources/brand-and-assets",
-              "introduction/roi-simulator",
               "resources/contact-and-next-steps",
-              "resources/battle-card"
+              "resources/battle-card",
+              "resources/roi-calculator"
             ]
           }
         ]
@@ -110,7 +110,7 @@
     "primary": {
       "type": "button",
       "label": "Talk to us",
-      "href": "mailto:hello@usecharlie.ai"
+      "href": "mailto:support@usecharlie.ai"
     }
   },
   "footer": {
