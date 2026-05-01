@@ -1,7 +1,6 @@
 ---
 title: "Theme integration"
 description: "Display accurate sellable inventory on your storefront"
-icon: "palette"
 ---
 
 When safety stock is enabled in Charlie, your theme needs to display **sellable inventory** instead of native Shopify availability. This guide shows how to integrate Charlie's inventory metafields into any Shopify theme.
@@ -276,14 +275,3 @@ The specific files depend on your theme structure. Here are common files that ty
     When Charlie is uninstalled, inventory metafields are deleted. If your theme only checks for `!= nil`, it will correctly fall back to native Shopify behavior. However, if you cached or hardcoded values, clear your theme cache and verify the metafield checks are working.
   </Accordion>
 </AccordionGroup>
-
-## Related
-
-<CardGroup cols={2}>
-  <Card title="Safety Stock" icon="shield" href="/inventory/safety-stock">
-    Configure safety stock rules and settings
-  </Card>
-  <Card title="Inventory Overview" icon="warehouse" href="/inventory/overview">
-    How Charlie syncs inventory data
-  </Card>
-</CardGroup>
