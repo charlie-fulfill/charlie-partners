@@ -1,0 +1,289 @@
+---
+title: "Theme integration"
+description: "Display accurate sellable inventory on your storefront"
+icon: "palette"
+---
+
+When safety stock is enabled in Charlie, your theme needs to display **sellable inventory** instead of native Shopify availability. This guide shows how to integrate Charlie's inventory metafields into any Shopify theme.
+
+<Card title="Reference implementation" icon="github" href="https://github.com/autrementstudio/charlie-safety-stock-reference-theme">
+  See a complete working example in our reference theme repository based on Shopify's Horizon theme.
+</Card>
+
+## Who this is for
+
+- Theme developers customizing themes for Charlie users
+- Agencies building or modifying Shopify themes
+- Merchants with custom themes who want accurate storefront availability
+
+## Finding your app namespace
+
+Charlie's metafields use a unique namespace per app installation. Before making theme changes, you need to identify your namespace.
+
+<Steps>
+  <Step title="Navigate to metafield definitions">
+    Go to Shopify Admin, then Settings, then Custom data, then Metafields.
+  </Step>
+  <Step title="Select Variants">
+    Click on "Variants" in the metafield definitions list.
+  </Step>
+  <Step title="Find the Charlie metafield">
+    Look for a metafield with key containing `inventory.available` from Charlie.
+  </Step>
+  <Step title="Extract the namespace">
+    The namespace follows the format `app--{APP_ID}--inventory`. Copy the full namespace including `app--` and `--inventory`.
+  </Step>
+</Steps>
+
+<Info>
+  The namespace is unique per app installation. Example: `app--303723511809--inventory`
+</Info>
+
+## Metafields reference
+
+Charlie writes these metafields when safety stock is enabled.
+
+### Shop-level
+
+| Key | Type | Purpose |
+|-----|------|---------|
+| `safety_stock_enabled` | boolean | Master switch that indicates if safety stock is active |
+
+### Variant-level
+
+| Key | Type | Purpose |
+|-----|------|---------|
+| `available` | boolean | True if sellable quantity is greater than 0 |
+| `fulfillable` | integer | Total sellable quantity across fulfillment locations |
+
+### Product-level
+
+| Key | Type | Purpose |
+|-----|------|---------|
+| `available` | boolean | True if any variant has sellable quantity greater than 0 |
+| `first_available_variant` | variant_reference | First variant with sellable quantity greater than 0 |
+| `fulfillable` | integer | Total fulfillable inventory across all variants, adjusted for safety stock |
+
+<Info>
+  The `fulfillable` and `available` metafields are publicly accessible via the Storefront API under the `charlie_inventory` namespace. You can use them to create smart collections based on inventory availability — for example, a "Low Stock" or "In Stock" collection that updates automatically.
+</Info>
+
+## Implementation patterns
+
+### Basic setup
+
+At the start of any file that needs safety stock awareness, define the namespace and check if safety stock is enabled.
+
+```liquid
+{% liquid
+  assign inventory_ns = 'app--YOUR_APP_ID--inventory'
+  assign safety_enabled = shop.metafields[inventory_ns].safety_stock_enabled.value
+%}
+```
+
+Replace `YOUR_APP_ID` with your actual app ID from the namespace you identified earlier.
+
+<Info>
+  We recommend checking `safety_stock_enabled` before applying overrides. This ensures your theme gracefully handles scenarios where Charlie is uninstalled or safety stock is disabled. Without this check, stale metafield values could cause incorrect availability displays.
+</Info>
+
+### Product availability
+
+Use this pattern on collection pages and product cards to determine if a product should show as available.
+
+```liquid
+{% liquid
+  if safety_enabled
+    assign charlie_meta = product.metafields[inventory_ns].available
+    if charlie_meta != nil
+      assign product_available = charlie_meta.value
+    else
+      assign product_available = product.available
+    endif
+  else
+    assign product_available = product.available
+  endif
+%}
+```
+
+### Variant availability
+
+Use this pattern on product detail pages and variant pickers to determine if a specific variant is available.
+
+```liquid
+{% liquid
+  if safety_enabled
+    assign charlie_meta = variant.metafields[inventory_ns].available
+    if charlie_meta != nil
+      assign variant_available = charlie_meta.value
+    else
+      assign variant_available = variant.available
+    endif
+  else
+    assign variant_available = variant.available
+  endif
+%}
+```
+
+### First available variant
+
+Use this pattern when linking to products to ensure the URL points to a sellable variant.
+
+```liquid
+{% liquid
+  assign safety_first = nil
+  if safety_enabled and product.metafields[inventory_ns].available.value
+    assign safety_first = product.metafields[inventory_ns].first_available_variant.value
+  endif
+  assign selected_variant = product.selected_variant | default: safety_first | default: product.selected_or_first_available_variant
+%}
+```
+
+### Variant JSON for JavaScript
+
+<Warning>
+  This pattern is essential for variant pickers to work correctly. JavaScript relies on the variant JSON to determine which variants can be added to cart. The JSON replacement handles both space and no-space formats that Shopify may output.
+</Warning>
+
+When themes output variant JSON for JavaScript consumption, the `available` property must reflect sellable inventory.
+
+```liquid
+{% capture variant_json %}{{ variant | json }}{% endcapture %}
+
+{% if safety_enabled %}
+  {% assign charlie_meta = variant.metafields[inventory_ns].available %}
+  {% if charlie_meta != nil %}
+    {% assign variant_available = charlie_meta.value %}
+  {% else %}
+    {% assign variant_available = variant.available %}
+  {% endif %}
+
+  {% if variant_available == true or variant_available == 'true' %}
+    {% assign variant_json = variant_json | replace: '"available":false', '"available":true' %}
+    {% assign variant_json = variant_json | replace: '"available": false', '"available": true' %}
+  {% else %}
+    {% assign variant_json = variant_json | replace: '"available":true', '"available":false' %}
+    {% assign variant_json = variant_json | replace: '"available": true', '"available": false' %}
+  {% endif %}
+{% endif %}
+
+{{ variant_json }}
+```
+
+<Note>
+  The condition checks for both boolean `true` and string `'true'` because Liquid metafield values may be returned as strings in some contexts.
+</Note>
+
+### Sold Out badges
+
+Use this pattern on product cards to correctly show Sold Out badges based on sellable inventory.
+
+```liquid
+{% liquid
+  assign charlie_meta = product.metafields[inventory_ns].available
+  if charlie_meta != nil
+    assign product_available = charlie_meta.value
+  else
+    assign product_available = product.available
+  endif
+
+  if product_available == false
+    assign show_sold_out_badge = true
+  endif
+%}
+
+{% if show_sold_out_badge %}
+  <span class="badge badge--sold-out">Sold Out</span>
+{% endif %}
+```
+
+### Price display
+
+When showing prices, use `first_available_variant` to display the price of a sellable variant rather than an unavailable one.
+
+```liquid
+{% liquid
+  assign safety_first = nil
+  if product.metafields[inventory_ns].available.value
+    assign safety_first = product.metafields[inventory_ns].first_available_variant.value
+  endif
+  assign display_variant = product.selected_variant | default: safety_first | default: product.selected_or_first_available_variant
+%}
+
+{{ display_variant.price | money }}
+```
+
+## Files to modify
+
+The specific files depend on your theme structure. Here are common files that typically need updates.
+
+| File pattern | What to change |
+|--------------|----------------|
+| Product card snippets | Product availability for collection pages |
+| Variant picker snippets | Variant availability and JSON override |
+| Swatch components | Swatch availability states |
+| Buy buttons | Add to cart button enabled/disabled state |
+| Quick add modals | Availability in modal variant selectors |
+| Price snippets | Selected variant for price display |
+| Badge/label snippets | Sold Out badge visibility |
+| Inventory display | Stock status based on sellable quantity |
+
+## What to ignore
+
+<Note>
+  **Local pickup availability** uses total stock at physical locations and is unaffected by safety stock reserves. No changes are needed for pickup location availability displays.
+</Note>
+
+## Testing checklist
+
+<Steps>
+  <Step title="Enable safety stock">
+    In Charlie, enable safety stock with "Block orders" mode for the clearest testing.
+  </Step>
+  <Step title="Create a test rule">
+    Create a rule with 100% reserve on a test product so it shows zero sellable inventory.
+  </Step>
+  <Step title="Verify collection pages">
+    Check that the product shows "Sold out" on collection pages.
+  </Step>
+  <Step title="Test variant switching">
+    On the product page, switch between variants and verify availability updates correctly.
+  </Step>
+  <Step title="Verify add to cart">
+    Confirm the add to cart button is disabled for unavailable variants.
+  </Step>
+  <Step title="Disable and verify">
+    Disable safety stock in Charlie and verify the theme reverts to native Shopify behavior.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Metafield returns nil">
+    The namespace in your theme code does not match your Charlie installation's app ID. Double-check the namespace in Shopify Admin under Settings, then Custom data, then Metafields, then Variants.
+  </Accordion>
+  <Accordion title="Availability not updating on variant switch">
+    The variant JSON replacement pattern may not be catching all formats. Ensure you are replacing both `"available":false` (no space) and `"available": false` (with space) as Shopify may output either format.
+  </Accordion>
+  <Accordion title="Theme does not revert when safety stock is disabled">
+    Your code may be missing the `safety_stock_enabled` check. All safety stock logic should be wrapped in a conditional that first checks if safety stock is enabled at the shop level.
+  </Accordion>
+  <Accordion title="Quick add shows different availability than product page">
+    Quick add modals often have separate variant picker implementations. Ensure both the main product page and quick add modal snippets include the safety stock override logic.
+  </Accordion>
+  <Accordion title="Incorrect availability after uninstalling Charlie">
+    When Charlie is uninstalled, inventory metafields are deleted. If your theme only checks for `!= nil`, it will correctly fall back to native Shopify behavior. However, if you cached or hardcoded values, clear your theme cache and verify the metafield checks are working.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Safety Stock" icon="shield" href="/inventory/safety-stock">
+    Configure safety stock rules and settings
+  </Card>
+  <Card title="Inventory Overview" icon="warehouse" href="/inventory/overview">
+    How Charlie syncs inventory data
+  </Card>
+</CardGroup>
