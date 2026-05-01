@@ -111,7 +111,7 @@
     "primary": {
       "type": "button",
       "label": "Talk to us",
-      "href": "mailto:hello@usecharlie.ai"
+      "href": "mailto:support@usecharlie.ai"
     }
   },
   "footer": {
