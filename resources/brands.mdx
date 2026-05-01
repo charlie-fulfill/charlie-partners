@@ -1,0 +1,134 @@
+---
+title: "Brand and assets."
+description: "Charlie's design system — tokens, typography, and guidelines for partner use."
+---
+
+Charlie's design system is precise, restrained, and data-forward. No decoration that doesn't earn its place. Use these specs whenever you represent Charlie in proposals, decks, or client-facing materials.
+
+## Logo.
+
+The Charlie logo is an 18x18px filled square mark with an inner L-bracket — a registration mark that reads as precise and architectural. It sits alongside the wordmark "Charlie" in Inter Tight, weight 600, letter-spacing -0.02em.
+
+<CardGroup cols={2}>
+  <Card title="Logo — light backgrounds" icon="image" href="/images/logodark.svg">
+    Dark mark on light backgrounds. Use on white and paper (`#f4f5f8`).
+  </Card>
+  <Card title="Logo — dark backgrounds" icon="image" href="/images/logolight.svg">
+    Light mark on dark backgrounds. Use on ink (`#0a0f1a`) and dark surfaces.
+  </Card>
+</CardGroup>
+
+**Usage rules.**
+- Maintain clear space equal to the mark width on all sides.
+- Never stretch, rotate, recolor, or add effects to the mark.
+- Never separate the wordmark from the mark in partner materials.
+
+## Color.
+
+A cool blue-gray neutral ramp with a single signal accent. Status colors are intentionally desaturated so they do not compete with the UI.
+
+### Neutrals.
+
+| Token | Hex | Use |
+|---|---|---|
+| `--ink` | `#0a0f1a` | Primary text, headings |
+| `--ink-2` | `#1a2233` | Secondary text, body copy |
+| `--ink-3` | `#4a5468` | Tertiary text, labels, captions |
+| `--ink-4` | `#78819a` | Placeholder, muted metadata |
+| `--line` | `#dde1ea` | Hairline borders, dividers |
+| `--line-2` | `#c8cdd9` | Secondary borders |
+| `--paper` | `#f4f5f8` | Page background, card fills |
+| `--paper-2` | `#edeff4` | Inset backgrounds, secondary panels |
+| `--white` | `#ffffff` | Base surface |
+
+### Accent and status.
+
+| Token | Hex | Use |
+|---|---|---|
+| `--accent` | `#0a66ff` | Live indicators, active states, chart highlights |
+| `--ok` | `#147a43` | Fulfilled, success states |
+| `--warn` | `#b46200` | Pending, warning states |
+| `--danger` | `#a82436` | Error, critical states |
+
+**Rules.** The accent is used once per surface — for signal, not decoration. No gradients, no tints, no photography, no illustrations. Backgrounds are flat neutrals only.
+
+## Typography.
+
+2 typefaces. No exceptions.
+
+### Inter Tight.
+
+Used for everything humans read: headings, body copy, UI labels, buttons.
+
+| Style | Size | Weight | Tracking | Leading |
+|---|---|---|---|---|
+| Display | clamp(48px, 7.5vw, 112px) | 500 | -0.035em | 0.98 |
+| H1 | clamp(36px, 4.5vw, 60px) | 500 | -0.028em | 1.02 |
+| H2 | clamp(26px, 2.6vw, 36px) | 500 | -0.02em | 1.1 |
+| H3 | 20px | 500 | -0.01em | 1.25 |
+| Body large | 17px | 400 | — | 1.5 |
+| Body | 15px | 400 | — | 1.5 |
+| Body small | 14px | 400 | — | 1.55 |
+
+### JetBrains Mono.
+
+Used for system chrome: eyebrows, stat tags, order IDs, timestamps, data labels, any code.
+
+| Style | Size | Tracking | Transform |
+|---|---|---|---|
+| Eyebrow | 11px | 0.08em | Uppercase |
+
+Tabular numbers globally via `font-feature-settings: "tnum"`. Numbers always align.
+
+## Spacing.
+
+| Token | Value | Use |
+|---|---|---|
+| `--gutter` | 32px | Horizontal page margins |
+| `--section-y` | 120px | Vertical section spacing |
+| `--card-pad` | 32px | Internal card padding |
+| `--max-width` | 1360px | Maximum content width |
+
+## Borders and radius.
+
+Charlie uses no border radius. All surfaces are sharp — no rounded corners anywhere.
+
+| Token | Value | Use |
+|---|---|---|
+| `--hairline` | 1px solid `#dde1ea` | Default dividers, card edges |
+| `--hairline-2` | 1px solid `#c8cdd9` | Secondary borders |
+| `--heavy` | 1px solid `#0a0f1a` | Emphasis borders |
+
+## Voice.
+
+Technical, precise, confident. Charlie writes for operators and engineers as peers — not as support tickets.
+
+**Do.**
+- Claim a position in the first clause. "Route every order against the policy that wins."
+- Use numerals always: `14.8M orders/month`, `120ms`, `$3,800/mo`.
+- Pair a claim with its counter-claim. "Priced on GMV. Not per seat."
+- Use domain vocabulary without glossing: GMV, 3PL, SKU, SLA, ASN, EDI.
+- Sentence case for all headings. End every heading with a period.
+
+**Don't.**
+- Exclamation marks. Em-dashes for drama.
+- Title Case in headings.
+- Hedging: "maybe", "sort of", "flexible pricing tailored to your needs".
+- Filler adjectives: "game-changing", "powerful", "innovative".
+- Emoji or unicode decoration.
+
+## Motion.
+
+3 easings. No parallax, no spring physics, no Lottie.
+
+| Name | Easing | Duration | Use |
+|---|---|---|---|
+| Instant | `linear` | 120ms | Toggles, hover, chip selection |
+| Entrance | `cubic-bezier(.2,.7,.2,1)` | 500ms | Scroll reveals, element mount |
+| Transition | `cubic-bezier(.7,0,.3,1)` | 400ms | Page and panel changes |
+
+## Materials.
+
+<Card title="Need materials now?" icon="envelope" href="mailto:hello@usecharlie.ai" horizontal>
+  Contact the Charlie team and we'll send you what you need.
+</Card>
