@@ -63,7 +63,7 @@
             "pages": [
               "sales-enablement/when-to-bring-charlie-in",
               "sales-enablement/discovery-questions",
-              "sales-enablement/common-objections"
+              "sales-enablement/battle-card"
             ]
           }
         ]
@@ -90,11 +90,11 @@
           {
             "group": "Resources",
             "pages": [
-              "resources/about-charlie",
               "resources/brand-and-assets",
-              "resources/roi-calculator",
+              "resources/about-charlie",
               "resources/contact-and-next-steps",
-              "resources/battle-card"
+              "resources/battle-card",
+              "resources/roi-calculator"
             ]
           }
         ]
