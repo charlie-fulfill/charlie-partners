@@ -20,10 +20,12 @@
         "groups": [
           {
             "group": "Introduction",
-            "pages": [
-              "introduction/welcome",
-              "introduction/what-is-charlie"
-            ]
+           "pages": [
+  "introduction/welcome",
+  "introduction/what-is-charlie",
+  "introduction/the-problem",
+  "introduction/roi-simulator"
+]
           }
         ]
       },
