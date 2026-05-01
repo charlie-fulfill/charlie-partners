@@ -20,12 +20,11 @@
         "groups": [
           {
             "group": "Introduction",
-           "pages": [
-  "introduction/welcome",
-  "introduction/what-is-charlie",
-  "introduction/the-problem",
-  "introduction/roi-simulator"
-]
+            "pages": [
+              "introduction/welcome",
+              "introduction/what-is-charlie",
+              "introduction/the-problem"
+            ]
           }
         ]
       },
@@ -90,8 +89,9 @@
           {
             "group": "Resources",
             "pages": [
-              "resources/brand-and-assets",
               "resources/about-charlie",
+              "resources/brand-and-assets",
+              "introduction/roi-simulator",
               "resources/contact-and-next-steps"
             ]
           }
