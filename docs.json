@@ -125,8 +125,8 @@
     "dark": "/images/Logodarkcharlie.png"
   },
   "logo": {
-    "light": "/images/charlie-lockup-light(1).png",
-    "dark": "/images/charlie-lockup-dark.png",
+    "light": "/images/charlie-logo.svg",
+    "dark": "/images/charlie-logo(1).svg",
     "href": "https://partners.usecharlie.ai"
   },
   "fonts": {
