@@ -1,0 +1,24 @@
+/* Charlie Partners — Design System Tokens (Charlie V1 DA) */
+:root {
+  --charlie-primary-100: #e8f5f0;
+  --charlie-primary-200: #b8e0d2;
+  --charlie-primary-300: #5eaa8d;
+  --charlie-primary-400: #0f5c45;
+  --charlie-primary-500: #072e23;
+  --charlie-neutral-50: #f7faf9;
+  --charlie-neutral-100: #e8edeb;
+  --charlie-neutral-200: #c4ccc8;
+  --charlie-neutral-300: #8a9691;
+  --charlie-neutral-400: #4a5651;
+  --charlie-neutral-500: #283330;
+  --charlie-neutral-600: #0d1f1a;
+  --charlie-gradient-title: linear-gradient(90deg, #072e23 0%, #072e23 30%, #2ead85 85%, #5eaa8d 100%);
+}
+.dark, [data-theme="dark"] {
+  --charlie-primary-400: #2ead85;
+  --charlie-neutral-50: #0a1a15;
+  --charlie-neutral-600: #f0faf6;
+}
+/* The design system caps weight at 600 — no 700/bold. */
+:where(h1, h2, h3, h4, h5, h6) { font-weight: 600; }
+:where(strong, b) { font-weight: 600; }
