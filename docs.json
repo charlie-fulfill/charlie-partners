@@ -130,9 +130,9 @@
     "href": "https://partners.usecharlie.ai"
   },
   "fonts": {
-    "family": "Inter Tight",
+    "family": "Inter",
     "heading": {
-      "family": "Inter Tight"
+      "family": "Inter"
     }
   },
   "integrations": {
