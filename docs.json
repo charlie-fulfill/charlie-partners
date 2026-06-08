@@ -50,7 +50,7 @@
             "pages": [
               "working-together/how-we-work-with-partners",
               "working-together/commercial-model",
-              "working-together/untitled-page"
+              "working-together/become-a-partner"
             ]
           }
         ]
@@ -111,8 +111,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Talk to us",
-      "href": "mailto:support@usecharlie.ai"
+      "label": "Become a partner",
+      "href": "/working-together/become-a-partner"
     }
   },
   "footer": {
