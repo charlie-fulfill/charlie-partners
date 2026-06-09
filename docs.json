@@ -12,6 +12,11 @@
     "default": "system",
     "strict": false
   },
+   "seo": {
+    "metatags": {
+      "robots": "noindex, nofollow"
+    }
+  },
   "navigation": {
     "anchors": [
       {
